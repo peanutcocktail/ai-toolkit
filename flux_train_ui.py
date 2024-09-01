@@ -212,6 +212,8 @@ def start_training(
         config["config"]["process"][0]["model"]["name_or_path"] = "black-forest-labs/FLUX.1-schnell"
         config["config"]["process"][0]["model"]["assistant_lora_path"] = "ostris/FLUX.1-schnell-training-adapter"
         config["config"]["process"][0]["sample"]["sample_steps"] = 4
+    elif(model_to_train == "dev"):
+        config["config"]["process"][0]["model"]["name_or_path"] = "cocktailpeanut/xulf-d"
     if(use_more_advanced_options):
         more_advanced_options_dict = yaml.safe_load(more_advanced_options)
         config["config"]["process"][0] = recursive_update(config["config"]["process"][0], more_advanced_options_dict)
